@@ -1,0 +1,87 @@
+.sidebar {
+  width: 300px;
+  background: white;
+  border-radius: 8px;
+  margin: 20px 20px 20px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-content {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar-title {
+  color: #0056b3;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.focus-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.focus-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.focus-card:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  width: 30px;
+  text-align: center;
+}
+
+.card-text {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.card-arrow {
+  color: #0056b3;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.sidebar-watermark {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.1;
+  z-index: 1;
+  text-align: center;
+}
+
+.watermark-icon {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.watermark-text {
+  font-size: 10px;
+  color: #0056b3;
+  font-weight: bold;
+} 

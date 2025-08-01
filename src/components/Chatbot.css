@@ -1,0 +1,113 @@
+.chatbot-container {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.chatbot-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.chatbot-toggle:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.chatbot-mascot {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.chatbot-toggle:hover .chatbot-mascot {
+  transform: scale(1.1);
+}
+
+.chatbot-window {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 400px;
+  height: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatbot-header {
+  background: #0056b3;
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px 12px 0 0;
+}
+
+.chatbot-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* iframe 스타일 */
+.chatbot-window iframe {
+  flex: 1;
+  border: none;
+  border-radius: 0 0 12px 12px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .chatbot-window {
+    width: 350px;
+    height: 500px;
+    right: -10px;
+  }
+  
+  .chatbot-mascot {
+    width: 60px;
+    height: 60px;
+  }
+} 

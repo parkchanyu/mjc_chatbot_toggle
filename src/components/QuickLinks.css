@@ -1,0 +1,111 @@
+.quick-links {
+  background: white;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.quick-links-header {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.user-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.tab {
+  color: #6c757d;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.tab.active {
+  color: #0056b3;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.tab:hover {
+  color: #0056b3;
+}
+
+.tab-separator {
+  color: #6c757d;
+}
+
+.quick-links-content {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.scroll-btn {
+  background: #0056b3;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+  background: #004494;
+}
+
+.links-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  flex: 1;
+  padding: 10px 0;
+}
+
+.quick-link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 80px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.quick-link-item:hover {
+  transform: translateY(-2px);
+  background: #f8f9fa;
+}
+
+.link-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ecef;
+  border-radius: 50%;
+}
+
+.link-label {
+  font-size: 12px;
+  text-align: center;
+  color: #333;
+  line-height: 1.2;
+  max-width: 80px;
+} 
