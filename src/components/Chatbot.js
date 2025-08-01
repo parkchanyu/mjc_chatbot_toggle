@@ -1,18 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Chatbot.css';
-import mascot from '../assets/dear-mascot.png'
+import mascot from '../assets/dear-mascot.png';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const chatbotRef = useRef(null);
+  const pos = useRef({ x: 0, y: 0, left: 0, top: 0 });
 
-  console.log(process.env.REACT_APP_IFRAME_URL);
-  const toggleChat = () => {
-    setIsOpen(!isOpen);
+  const toggleChat = () => setIsOpen(!isOpen);
+
+  const handleMouseDown = (e) => {
+    const chatbot = chatbotRef.current;
+    if (!chatbot) return;
+
+    pos.current = {
+      x: e.clientX,
+      y: e.clientY,
+      left: chatbot.offsetLeft,
+      top: chatbot.offsetTop
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  };
+
+  const handleMouseMove = (e) => {
+    const chatbot = chatbotRef.current;
+    if (!chatbot) return;
+
+    const dx = e.clientX - pos.current.x;
+    const dy = e.clientY - pos.current.y;
+
+    chatbot.style.left = `${pos.current.left + dx}px`;
+    chatbot.style.top = `${pos.current.top + dy}px`;
+    chatbot.style.bottom = 'auto';  // 위에서 고정된 위치 사용
+    chatbot.style.right = 'auto';
+  };
+
+  const handleMouseUp = () => {
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', handleMouseUp);
   };
 
   return (
     <div className="chatbot-container">
-      {/* 챗봇 버튼 */}
       <button className="chatbot-toggle" onClick={toggleChat}>
         <img 
           src={mascot} 
@@ -21,25 +52,19 @@ const Chatbot = () => {
         />
       </button>
 
-      {/* 챗봇 iframe */}
-      {isOpen && (
-        <div className="chatbot-window">
-          <div className="chatbot-header">
-            <h3>명지전문대학 챗봇</h3>
-            <button className="close-btn" onClick={toggleChat}>×</button>
-          </div>
-          <iframe
-            src = {process.env.REACT_APP_IFRAME_URL}
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            title="명지전문대학 챗봇"
-            style={{ border: 'none' }}
-          />
+      <div
+        ref={chatbotRef}
+        className={`chatbot-window ${isOpen ? 'open' : 'closed'}`}
+        style={{ left: 'unset', top: 'unset', bottom: 0, right: 0, position: 'absolute' }}
+      >
+        <div className="chatbot-header" onMouseDown={handleMouseDown}>
+          <h3>명지전문대학 챗봇</h3>
+          <button className="close-btn" onClick={toggleChat}>×</button>
         </div>
-      )}
+        <iframe src={process.env.REACT_APP_IFRAME_URL} title="명지전문대학 챗봇" />
+      </div>
     </div>
   );
 };
 
-export default Chatbot; 
+export default Chatbot;
