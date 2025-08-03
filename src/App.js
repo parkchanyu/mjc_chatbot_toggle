@@ -5,6 +5,8 @@ import MainBanner from './components/MainBanner';
 import Sidebar from './components/Sidebar';
 import QuickLinks from './components/QuickLinks';
 import Chatbot from './components/Chatbot';
+import NoticeBoard from './components/NoticeBoard';
+import CommunicationSection from './components/CommunicationSection';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       </div>
       <QuickLinks />
       <Chatbot />
+      <NoticeBoard />
+      <CommunicationSection />
     </div>
   );
 }

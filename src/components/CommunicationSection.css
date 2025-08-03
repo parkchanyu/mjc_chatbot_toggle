@@ -1,0 +1,69 @@
+.communication-section {
+  background: white;
+  padding: 80px 20px 60px;
+  text-align: center;
+}
+
+.communication-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.communication-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.communication-card {
+  position: relative;
+  width: 520px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.communication-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  text-align: left;
+  max-width: 300px;
+}
+
+.card-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.go-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.go-btn:hover {
+  background: white;
+  color: black;
+}

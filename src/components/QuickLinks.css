@@ -68,7 +68,7 @@
 
 .links-container {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
   overflow-x: auto;
   flex: 1;
   padding: 10px 0;

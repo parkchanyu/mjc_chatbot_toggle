@@ -43,7 +43,7 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="chatbot-container">
+    <div className="chatbot-container" >
       <button className="chatbot-toggle" onClick={toggleChat}>
         <img 
           src={mascot} 
@@ -53,9 +53,9 @@ const Chatbot = () => {
       </button>
 
       <div
-        ref={chatbotRef}
         className={`chatbot-window ${isOpen ? 'open' : 'closed'}`}
         style={{ left: 'unset', top: 'unset', bottom: 0, right: 0, position: 'absolute' }}
+        ref={chatbotRef}
       >
         <div className="chatbot-header" onMouseDown={handleMouseDown}>
           <h3>명지전문대학 챗봇</h3>

@@ -67,9 +67,12 @@
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  background: transparent;
+  
+}
+.logo > img {
+  object-fit: cover;
+  width: 200px;
 }
 
 .logo-icon {

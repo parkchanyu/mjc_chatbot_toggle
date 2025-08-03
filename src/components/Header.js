@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import Logo from '../assets/mjcLogo.png'
 
 const Header = () => {
   return (
@@ -29,8 +30,7 @@ const Header = () => {
       <div className="logo-search-section">
         <div className="logo-section">
           <div className="logo">
-            <div className="logo-icon">🌳</div>
-            <span className="logo-text">명지전문대학 MYONGJI COLLEGE</span>
+            <img alt='Logo' src={Logo}/>
           </div>
           <div className="social-links">
             <a href="#youtube" className="social-icon">📺</a>
